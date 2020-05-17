@@ -11,7 +11,7 @@ class miniconda::install {
 
   exec { 'install miniconda' :
     command => "curl -fsSL ${installer_url} | bash -s -- -b -f -p ${conda_root}",
-    creates => "${conda_root}",
+    creates => $conda_root,
   }
 
 }

@@ -19,7 +19,7 @@ class miniconda::jq (
 ) {
 
   $_tgt = "${install_dir}/jq"
-  exec { 'puppet-miniconda requires jq' : 
+  exec { 'puppet-miniconda requires jq' :
     command => "curl -fsSL -o ${_tgt} ${url}",
     creates => $_tgt,
     require => [ Class[ 'miniconda::install' ] ]
