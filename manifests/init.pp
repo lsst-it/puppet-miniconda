@@ -17,5 +17,6 @@ class miniconda (
   String[1] $installer_url,
 ) {
     include ::miniconda::install
+    include ::miniconda::config
     include ::miniconda::jq
 }

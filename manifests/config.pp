@@ -34,7 +34,8 @@ class miniconda::config (
 
   file { $_rcfile :
     ensure  => file,
-    content => template( 'anaconda/condarc.erb' ),
+    content => template( 'miniconda/condarc.erb' ),
+    require => Class[ 'miniconda::install' ],
   }
 
 }

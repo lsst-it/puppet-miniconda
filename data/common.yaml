@@ -3,6 +3,7 @@ miniconda::conda_root: "/opt/miniconda"
 miniconda::installer_url: "https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
 
 miniconda::config::channels: []
+miniconda::config::rcfile: null
 miniconda::config::settings: {}
 
 miniconda::jq::url: "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64"
