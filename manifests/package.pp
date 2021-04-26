@@ -24,7 +24,11 @@ define miniconda::package (
 #    notify {"NEEDS INSTALL '${pkg_name}' (cur_ver empty)" : }
     $_needs_install = true
   } elsif $req_ver {
-    if ! $cur_ver.match("\A${req_ver}") {
+    # IT-2939 "\A" throwing errors for some puppet servers
+    #         and since NCSA is no longer using miniconda anyway,
+    #         changing this to stop the errors
+    # if ! $cur_ver.match("\A${req_ver}") {
+    if ! $cur_ver.match("^${req_ver}") {
 #      notify {"NEEDS INSTALL '${pkg_name}' (version mismatch)" : }
       $_needs_install = true
     }
